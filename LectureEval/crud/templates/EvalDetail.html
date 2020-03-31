@@ -1,0 +1,10 @@
+<!-- 퍙기 자세히 보기 -->
+
+<h1> Details  </h1>
+<h2> {{eval_.title}} </h2>
+<p>{{eval_.pub_date}} </p>
+<p> {{eval_.body}} </p>
+<p> <button> <a href = "{% url 'update' eval_.id %}"> 수정하기 </a> </button>
+<p> <button> <a href = "{% url 'delete' eval_.id %}"> 삭제하기 </a></button>
+<p> <button> <a href = "{% url 'lectureList' %}"> Home </a> </button>
+

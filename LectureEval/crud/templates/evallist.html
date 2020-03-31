@@ -1,0 +1,23 @@
+<h1> 평가 목록 </h1>
+
+<!-- 평가 대상인 강의에 대한 정보 -->
+
+<h2> {{lect.lectureName}} </h2>
+<p> {{lect.professor}} </p>
+<p> {{lect.separation}} </p>
+
+{% for eval in evals.all %}
+ 
+<h3> {{eval.title}} </h3>
+<p> {{eval.pub_date}} </p>
+<p> {{eval.summary}} </p>
+<button> <a href = "{% url 'detail' eval.id %}"> 자세히 보기 </a> </button>
+
+{% empty %}
+
+<h2> 아직 강의평이 없습니다 </h2>
+
+{% endfor %}
+
+<button> <a href = "{% url 'evalpost' lect.id %}"> 강의평 쓰기 </a> </button>
+

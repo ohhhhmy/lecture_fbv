@@ -1,0 +1,12 @@
+<!-- for EvalForm -->
+
+<form method = "POST">
+    {% csrf_token %}
+    <table>
+    강의평을 작성해주세요.
+    {{evalform.as_table}}
+    </table>
+    <br>
+    <input type = "submit" value = "제출하기">
+
+</form>

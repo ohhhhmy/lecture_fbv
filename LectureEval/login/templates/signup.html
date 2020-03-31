@@ -1,0 +1,23 @@
+<!-- 회원가입 -->
+
+<form method = "POST" action = "{% url 'signup' %}">
+
+    {% csrf_token %}
+
+    ID:
+    <br>
+    <input type = "text" name = "username">
+    <br>
+    PW:
+    <input type = "password" name = "password1">
+    <br>
+    confirm PW:
+    <br>
+    <input type = "password" name = "password2">
+    <br>
+    별명:
+    <br>
+    <input type = "text" name = "nickname">
+    <br>
+    <input type = "submit" value = "제출">
+</form>

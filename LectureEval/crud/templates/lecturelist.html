@@ -1,0 +1,26 @@
+<!-- 강의 목록이자 메인-->
+{% if user.is_authenticated %}
+
+    <h1> {{user.profile.nickname}} 님 반갑습니다 </h1>
+    <button> <a href = "{% url 'logout' %}"> 로그아웃 </a> </button>
+
+{% else %}
+
+    <button> <a href = "{% url 'signupform' %}"> 회원가입 </a> </button>
+    <button> <a href = "{% url 'loginform' %}"> 로그인 </a> </button>
+
+
+{% endif %}
+{% for lects in lectures.all %}
+
+
+<h2> {{lects.lectureName}} </h2>
+<p> {{lects.professor}} </p>
+<p> {{lects.separation}} </p> 
+
+
+<button> <a href = "{% url 'evallist' lects.id %}"> 평가 보기</a></button>
+
+{% endfor %}
+
+<button><a href = "{% url 'addLecture' %}"> 강의 추가 </a></button>

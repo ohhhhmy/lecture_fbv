@@ -1,0 +1,11 @@
+<!-- 회원가입-->
+
+<form method = "POST">
+    {% csrf_token %}
+    
+    <table>
+    {{form.as_table}}
+    </table>
+
+    <input type = "submit" value = "싸인업">
+</form>

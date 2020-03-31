@@ -1,0 +1,15 @@
+<!-- 게시글 수정 -->
+
+
+<h1> Update <h1>
+
+<form action = "{% url 'update' edit_eval.id %}" method = "POST">
+    {% csrf_token %}
+    
+    <input type = "text" value = "{{edit_eval.title}}" name = "title">
+    <br>
+    <textarea cols = "40" rows = "10"name = "body"> {{edit_eval.body}} </textarea>
+    <br>
+    <br>
+    <input type = "submit" value = "update">
+</form>
